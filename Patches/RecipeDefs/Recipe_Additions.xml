@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+			
+						<RecipeDef ParentName="GrenadeRecipeBase">
+							<defName>MakeCleanseRocket</defName>
+							<label>make cleansing rocket x5</label>
+							<description>Craft 5 cleansing rocket launchers.</description>
+							<jobString>Making cleansing rocket launchers.</jobString>
+							<workAmount>38250</workAmount>
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Steel</li>
+										</thingDefs>
+									</filter>
+									<count>100</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>FSX</li>
+										</thingDefs>
+									</filter>
+									<count>8</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>ComponentIndustrial</li>
+										</thingDefs>
+									</filter>
+									<count>5</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+								<thingDefs>
+									<li>Steel</li>
+									<li>FSX</li>
+									<li>ComponentIndustrial</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<Gun_CleansingRocketLauncher>5</Gun_CleansingRocketLauncher>
+							</products>
+							<researchPrerequisite>CE_Launchers</researchPrerequisite>
+						</RecipeDef>
+
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+</Patch>

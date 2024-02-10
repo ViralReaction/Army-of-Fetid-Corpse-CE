@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+		
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+
+						<ThingCategoryDef>
+							<defName>AmmoFetid</defName>
+							<label>fetid ammo</label>
+							<parent>AmmoAdvanced</parent>
+							<iconPath>UI/Icons/ThingCategories/CaliberHighCaliber</iconPath>
+						</ThingCategoryDef>
+
+						<!-- Ammosets -->
+						<CombatExtended.AmmoSetDef>
+							<defName>AmmoSet_Fetid_Boneshard</defName>
+							<label>boneshard</label>
+							<ammoTypes>
+								<Ammo_Fetid_Boneshard>Bullet_Fetid_Boneshard</Ammo_Fetid_Boneshard>
+							</ammoTypes>
+							<similarTo>AmmoSet_Rifle</similarTo>
+						</CombatExtended.AmmoSetDef>
+
+						<CombatExtended.AmmoSetDef>
+							<defName>AmmoSet_Fetid_Boneshard_Buck</defName>
+							<label>boneshard</label>
+							<ammoTypes>
+								<Ammo_Fetid_Boneshard_Buck>Bullet_Fetid_Boneshard_Buck</Ammo_Fetid_Boneshard_Buck>
+							</ammoTypes>
+							<similarTo>AmmoSet_Rifle</similarTo>
+						</CombatExtended.AmmoSetDef>
+
+						<CombatExtended.AmmoSetDef>
+							<defName>AmmoSet_Fetid_Boneshard_Advanced</defName>
+							<label>boneshard</label>
+							<ammoTypes>
+								<Ammo_Fetid_Boneshard_Advanced>Bullet_Fetid_Boneshard_Advanced</Ammo_Fetid_Boneshard_Advanced>
+							</ammoTypes>
+							<similarTo>AmmoSet_Rifle</similarTo>
+						</CombatExtended.AmmoSetDef>
+
+						<CombatExtended.AmmoSetDef>
+							<defName>AmmoSet_Fetid_Boneshard_Minigun</defName>
+							<label>boneshard</label>
+							<ammoTypes>
+								<Ammo_Fetid_Boneshard_Minigun>Bullet_Fetid_Boneshard_Minigun</Ammo_Fetid_Boneshard_Minigun>
+							</ammoTypes>
+							<similarTo>AmmoSet_Rifle</similarTo>
+						</CombatExtended.AmmoSetDef>
+
+						<!-- Ammo -->
+						<ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBase">
+							<defName>Ammo_Fetid_Boneshard</defName>
+							<label>infected boneshard ammo</label>
+							<description>Infected piece of bone that rapidly expelled to pierce through armor.</description>
+							<statBases>
+								<Mass>0.013</Mass>
+								<Bulk>0.02</Bulk>
+								<MarketValue>0.06</MarketValue>
+							</statBases>
+							<techLevel>Industrial</techLevel>
+							<stackLimit>5000</stackLimit>
+							<tradeTags>
+								<li>CE_AutoEnableTrade</li>
+							</tradeTags>
+							<thingCategories>
+								<li>AmmoFetid</li>
+							</thingCategories>
+							<graphicData>
+								<graphicClass>Graphic_Single</graphicClass>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+							</graphicData>
+							<cookOffProjectile>Bullet_Fetid_Boneshard</cookOffProjectile>
+							<ammoClass>FullMetalJacket</ammoClass>
+						</ThingDef>
+
+						<ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBase">
+							<defName>Ammo_Fetid_Boneshard_Buck</defName>
+							<label>infected boneshard ammo</label>
+							<description>Infected piece of bone that rapidly expelled to pierce through armor.</description>
+							<statBases>
+								<Mass>0.096</Mass>
+								<Bulk>0.1</Bulk>
+								<MarketValue>0.06</MarketValue>
+							</statBases>
+							<techLevel>Industrial</techLevel>
+							<stackLimit>5000</stackLimit>
+							<tradeTags>
+								<li>CE_AutoEnableTrade</li>
+							</tradeTags>
+							<thingCategories>
+								<li>AmmoFetid</li>
+							</thingCategories>
+							<graphicData>
+								<graphicClass>Graphic_Single</graphicClass>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+							</graphicData>
+							<cookOffProjectile>Bullet_Fetid_Boneshard_Buck</cookOffProjectile>
+							<ammoClass>FullMetalJacket</ammoClass>
+						</ThingDef>
+
+						<ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBase">
+							<defName>Ammo_Fetid_Boneshard_Advanced</defName>
+							<label>charged boneshard ammo</label>
+							<description>Infected piece of bone that rapidly expelled to pierce through armor.</description>
+							<statBases>
+								<Mass>0.096</Mass>
+								<Bulk>0.01</Bulk>
+								<MarketValue>0.5</MarketValue>
+							</statBases>
+							<techLevel>Industrial</techLevel>
+							<stackLimit>5000</stackLimit>
+							<tradeTags>
+								<li>CE_AutoEnableTrade</li>
+							</tradeTags>
+							<thingCategories>
+								<li>AmmoFetid</li>
+							</thingCategories>
+							<graphicData>
+								<graphicClass>Graphic_Single</graphicClass>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+							</graphicData>
+							<cookOffProjectile>Bullet_Fetid_Boneshard_Advanced</cookOffProjectile>
+							<ammoClass>FullMetalJacket</ammoClass>
+						</ThingDef>
+						
+						<ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBase">
+							<defName>Ammo_Fetid_Boneshard_Minigun</defName>
+							<label>infected bonesliver ammo</label>
+							<description>Infected piece of bone that rapidly expelled to pierce through armor.</description>
+							<statBases>
+								<Mass>0.024</Mass>
+								<Bulk>0.03</Bulk>
+								<MarketValue>0.12</MarketValue>
+							</statBases>
+							<techLevel>Industrial</techLevel>
+							<stackLimit>5000</stackLimit>
+							<tradeTags>
+								<li>CE_AutoEnableTrade</li>
+							</tradeTags>
+							<thingCategories>
+								<li>AmmoFetid</li>
+							</thingCategories>
+							<graphicData>
+								<graphicClass>Graphic_Single</graphicClass>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+							</graphicData>
+							<cookOffProjectile>Bullet_Fetid_Boneshard_Minigun</cookOffProjectile>
+							<ammoClass>FullMetalJacket</ammoClass>
+						</ThingDef>
+
+						<!-- Projectiles -->
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_Fetid_Boneshard</defName>
+							<label>bone shard</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>RangedStab</damageDef>
+								<speed>65</speed>
+								<damageAmountBase>9</damageAmountBase>
+								<armorPenetrationSharp>12</armorPenetrationSharp>
+								<armorPenetrationBlunt>34.18</armorPenetrationBlunt>
+								<secondaryDamage>
+									<li>
+										<def>NecronoidRangeDamage</def>
+										<amount>1</amount>
+										<chance>0.50</chance>
+									</li>
+								</secondaryDamage>
+							</projectile>
+						</ThingDef>
+
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_Fetid_Boneshard_Buck</defName>
+							<label>bone shard</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<drawSize>0.5</drawSize>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>RangedStab</damageDef>
+								<speed>65</speed>
+								<damageAmountBase>10</damageAmountBase>
+								<pelletCount>14</pelletCount>
+								<armorPenetrationSharp>5</armorPenetrationSharp>
+								<armorPenetrationBlunt>8.1</armorPenetrationBlunt>
+								<spreadMult>15</spreadMult>
+								<secondaryDamage>
+									<li>
+										<def>NecronoidRangeDamage</def>
+										<amount>1</amount>
+										<chance>0.50</chance>
+									</li>
+								</secondaryDamage>
+							</projectile>
+						</ThingDef>
+
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_Fetid_Boneshard_Advanced</defName>
+							<label>charged boneshard</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>RangedStab</damageDef>
+								<damageAmountBase>13</damageAmountBase>
+								<speed>151</speed>
+								<secondaryDamage>
+									<li>
+										<def>Bomb_Secondary</def>
+										<amount>4</amount>
+									</li>
+									<li>
+										<def>NecronoidRangeDamage</def>
+										<amount>2</amount>
+										<chance>0.50</chance>
+									</li>
+								</secondaryDamage>
+								<armorPenetrationSharp>15</armorPenetrationSharp>
+								<armorPenetrationBlunt>25.6</armorPenetrationBlunt>
+							</projectile>
+						</ThingDef>
+
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_Fetid_Boneshard_Minigun</defName>
+							<label>boneshard</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>RangedStab</damageDef>
+								<speed>120</speed>
+								<damageAmountBase>12</damageAmountBase>
+								<secondaryDamage>
+									<li>
+										<def>NecronoidRangeDamage</def>
+										<amount>1</amount>
+										<chance>0.50</chance>
+									</li>
+								</secondaryDamage>
+								<armorPenetrationSharp>14</armorPenetrationSharp>
+								<armorPenetrationBlunt>66.72</armorPenetrationBlunt>
+							</projectile>
+						</ThingDef>
+
+						<!-- Ammo Recipes -->
+						<RecipeDef ParentName="AmmoRecipeBase">
+							<defName>MakeAmmo_Fetid_Boneshard</defName>
+							<label>make infected boneshard ammo x500</label>
+							<description>Craft 500 infected boneshard ammo</description>
+							<jobString>Making 500 infected boneshard ammo</jobString>
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Necro_Meat</li>
+										</thingDefs>
+									</filter>
+									<count>50</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+								<thingDefs>
+									<li>Necro_Meat</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<Ammo_Fetid_Boneshard>500</Ammo_Fetid_Boneshard>
+							</products>
+							<workAmount>1680</workAmount>
+							<researchPrerequisite>NecroWeapons</researchPrerequisite>
+						</RecipeDef>
+
+						<RecipeDef ParentName="AmmoRecipeBase">
+							<defName>MakeAmmo_Fetid_Boneshard_Buck</defName>
+							<label>make infected boneshard buckshot ammo x200</label>
+							<description>Craft 200 infected boneshard buckshot ammo</description>
+							<jobString>Making 200 infected boneshard buckshot ammo</jobString>
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Necro_Meat</li>
+										</thingDefs>
+									</filter>
+									<count>40</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+								<thingDefs>
+									<li>Necro_Meat</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<Ammo_Fetid_Boneshard_Buck>200</Ammo_Fetid_Boneshard_Buck>
+							</products>
+							<workAmount>4000</workAmount>
+							<researchPrerequisite>NecroWeapons</researchPrerequisite>
+						</RecipeDef>
+
+						<RecipeDef ParentName="AmmoRecipeBase">
+							<defName>MakeAmmo_Fetid_Boneshard_Advanced</defName>
+							<label>make charged boneshard ammo x500</label>
+							<description>Craft 500 charged boneshard ammo</description>
+							<jobString>Making 500 charged boneshard ammo</jobString>
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Necro_Meat</li>
+										</thingDefs>
+									</filter>
+									<count>100</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>ComponentIndustrial</li>
+										</thingDefs>
+									</filter>
+									<count>5</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+								<thingDefs>
+									<li>Necro_Meat</li>
+									<li>ComponentIndustrial</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<Ammo_Fetid_Boneshard_Advanced>500</Ammo_Fetid_Boneshard_Advanced>
+							</products>
+							<workAmount>6800</workAmount>
+							<researchPrerequisite>NecroWeapons</researchPrerequisite>
+						</RecipeDef>
+
+						<RecipeDef ParentName="AmmoRecipeBase">
+							<defName>MakeAmmo_Fetid_Boneshard_Minigun</defName>
+							<label>make infected bonesliver ammo x500</label>
+							<description>Craft 500 infected bonesliver ammo</description>
+							<jobString>Making 500 infected bonesliver ammo</jobString>
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Necro_Meat</li>
+										</thingDefs>
+									</filter>
+									<count>100</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+								<thingDefs>
+									<li>Necro_Meat</li>
+									<li>ComponentIndustrial</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<Ammo_Fetid_Boneshard_Minigun>500</Ammo_Fetid_Boneshard_Minigun>
+							</products>
+							<workAmount>3120</workAmount>
+							<researchPrerequisite>NecroWeapons</researchPrerequisite>
+						</RecipeDef>
+
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

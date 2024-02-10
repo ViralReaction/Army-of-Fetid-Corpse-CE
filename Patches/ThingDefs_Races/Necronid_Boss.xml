@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Body Shapes -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[
+					defName="Necronoid_FleshTyrant" or
+					defName="Necronoid_ExecutionerGhoul" or
+					defName="Necronoid_BloodLetterGhoul" or
+					defName="Necronoid_CrazedButcher" or
+					defName="Necronoid_Wendigo"]</xpath>
+					<value>
+						<li Class="CombatExtended.RacePropertiesExtensionCE">
+							<bodyShape>Humanoid</bodyShape>
+						</li>
+					</value>
+				</li>
+
+				<!-- Flesh Tyrant -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[
+					defName="Necronoid_FleshTyrant" or
+					defName="Necronoid_ExecutionerGhoul" or
+					defName="Necronoid_BloodLetterGhoul" or
+					defName="Necronoid_CrazedButcher"]/statBases
+					</xpath>
+					<value>
+						<MeleeCritChance>1.75</MeleeCritChance>
+						<MeleeParryChance>0.54</MeleeParryChance>
+						<MeleeDodgeChance>0.13</MeleeDodgeChance>
+						<Suppressability>0.0</Suppressability>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[
+					defName="Necronoid_FleshTyrant" or
+					defName="Necronoid_ExecutionerGhoul" or
+					defName="Necronoid_BloodLetterGhoul" or
+					defName="Necronoid_CrazedButcher"]/tools
+					</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>left fist</label>
+								<capacities>
+									<li>Demolish</li>
+								</capacities>
+								<power>30</power>
+								<cooldownTime>1.78</cooldownTime>
+								<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+								<extraMeleeDamages>
+								  <li>
+									<def>Stun</def>
+									<amount>15</amount>
+								  </li>
+								</extraMeleeDamages>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>30</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>right fist</label>
+								<capacities>
+									<li>Demolish</li>
+								</capacities>
+								<power>30</power>
+								<cooldownTime>1.78</cooldownTime>
+								<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+								<extraMeleeDamages>
+								  <li>
+									<def>Stun</def>
+									<amount>15</amount>
+								  </li>
+								</extraMeleeDamages>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>30</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>head</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>15</power>
+								<cooldownTime>2.52</cooldownTime>
+								<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+								<chanceFactor>0.2</chanceFactor>
+								<armorPenetrationBlunt>20</armorPenetrationBlunt>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[
+					defName="Necronoid_FleshTyrant" or
+					defName="Necronoid_ExecutionerGhoul" or
+					defName="Necronoid_BloodLetterGhoul" or
+					defName="Necronoid_CrazedButcher"]/statBases/ArmorRating_Blunt
+					</xpath>
+					<value>
+						<ArmorRating_Blunt>60</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[
+					defName="Necronoid_FleshTyrant" or
+					defName="Necronoid_ExecutionerGhoul" or
+					defName="Necronoid_BloodLetterGhoul" or
+					defName="Necronoid_CrazedButcher"]/statBases/ArmorRating_Sharp
+					</xpath>
+					<value>
+						<ArmorRating_Sharp>24</ArmorRating_Sharp>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[
+					defName="Necronoid_FleshTyrant" or
+					defName="Necronoid_ExecutionerGhoul" or
+					defName="Necronoid_BloodLetterGhoul" or
+					defName="Necronoid_CrazedButcher"]/statBases/ArmorRating_Heat
+					</xpath>
+					<value>
+						<ArmorRating_Heat>0.50</ArmorRating_Heat>
+					</value>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Necronoid_FleshTyrant"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Necronoid_FleshTyrant"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Necronoid_ExecutionerGhoul"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Necronoid_ExecutionerGhoul"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Necronoid_BloodLetterGhoul"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Necronoid_BloodLetterGhoul"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Necronoid_CrazedButcher"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Necronoid_CrazedButcher"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[
+					defName="Necronoid_FleshTyrant" or
+					defName="Necronoid_ExecutionerGhoul" or
+					defName="Necronoid_BloodLetterGhoul" or
+					defName="Necronoid_CrazedButcher"]/comps
+					</xpath>
+					<value>
+						<li Class="CombatExtended.CompProperties_ArmorDurability">
+							<Durability>4500</Durability>
+							<Regenerates>true</Regenerates>
+							<RegenInterval>600</RegenInterval>
+							<RegenValue>5</RegenValue>
+							<MinArmorPct>0.5</MinArmorPct>
+							<MinArmorValueSharp>14</MinArmorValueSharp>
+							<MinArmorValueBlunt>35</MinArmorValueBlunt>
+						</li>
+					</value>
+				</li>
+
+				<!-- Wendigo -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_Wendigo"]/statBases
+					</xpath>
+					<value>
+						<MeleeCritChance>1.96</MeleeCritChance>
+						<MeleeParryChance>0.64</MeleeParryChance>
+						<MeleeDodgeChance>0.13</MeleeDodgeChance>
+						<Suppressability>0.0</Suppressability>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_Wendigo"]/tools
+					</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>left fist</label>
+								<capacities>
+									<li>NecronoidCutMajor</li>
+								</capacities>
+								<power>45</power>
+								<cooldownTime>1.78</cooldownTime>
+								<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+								<extraMeleeDamages>
+								  <li>
+									<def>Stun</def>
+									<amount>15</amount>
+								  </li>
+								</extraMeleeDamages>
+								<armorPenetrationSharp>16</armorPenetrationSharp>
+								<armorPenetrationBlunt>40</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>right fist</label>
+								<capacities>
+									<li>NecronoidCutMajor</li>
+								</capacities>
+								<power>45</power>
+								<cooldownTime>1.78</cooldownTime>
+								<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+								<extraMeleeDamages>
+								  <li>
+									<def>Stun</def>
+									<amount>15</amount>
+								  </li>
+								</extraMeleeDamages>
+								<armorPenetrationSharp>16</armorPenetrationSharp>
+								<armorPenetrationBlunt>40</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>head</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>15</power>
+								<cooldownTime>2.52</cooldownTime>
+								<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+								<chanceFactor>0.2</chanceFactor>
+								<armorPenetrationBlunt>20</armorPenetrationBlunt>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_Wendigo"]/statBases/ArmorRating_Blunt
+					</xpath>
+					<value>
+						<ArmorRating_Blunt>60</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_Wendigo"]/statBases/ArmorRating_Sharp
+					</xpath>
+					<value>
+						<ArmorRating_Sharp>30</ArmorRating_Sharp>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_Wendigo"]/statBases/ArmorRating_Heat
+					</xpath>
+					<value>
+						<ArmorRating_Heat>0.50</ArmorRating_Heat>
+					</value>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Necronoid_Wendigo"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Necronoid_Wendigo"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_Wendigo"]/comps
+					</xpath>
+					<value>
+						<li Class="CombatExtended.CompProperties_ArmorDurability">
+							<Durability>5000</Durability>
+							<Regenerates>true</Regenerates>
+							<RegenInterval>600</RegenInterval>
+							<RegenValue>5</RegenValue>
+							<MinArmorPct>0.5</MinArmorPct>
+							<MinArmorValueSharp>16</MinArmorValueSharp>
+							<MinArmorValueBlunt>35</MinArmorValueBlunt>
+						</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

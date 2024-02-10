@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+		
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+
+						<ThingCategoryDef>
+							<defName>AmmoBolter75</defName>
+							<label>.75 Cal Bolter</label>
+							<parent>AmmoAdvanced</parent>
+							<iconPath>UI/Icons/ThingCategories/CaliberHighCaliber</iconPath>
+						</ThingCategoryDef>
+
+						<CombatExtended.AmmoSetDef>
+							<defName>AmmoSet_Fetid_Bolter</defName>
+							<label>bolter</label>
+							<ammoTypes>
+								<Ammo_Fetid_Bolter>Bullet_Fetid_Bolter</Ammo_Fetid_Bolter>
+							</ammoTypes>
+							<similarTo>AmmoSet_Rifle</similarTo>
+						</CombatExtended.AmmoSetDef>
+
+						<ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBase">
+							<defName>Ammo_Fetid_Bolter</defName>
+							<label>cleansing bolter cartridge</label>
+							<description>Replaces the core and tip of the standard bolt round with a vial of bolter rounds which is filled with ANB "Anti Necronoid Biomass" nanites.</description>
+							<statBases>
+								<Mass>0.2</Mass>
+								<Bulk>0.042</Bulk>
+							</statBases>
+							<techLevel>Spacer</techLevel>
+							<stackLimit>500</stackLimit>
+							<tradeTags>
+								<li>HPAmmo</li>
+								<li>CE_AutoEnableTrade</li>
+							</tradeTags>
+							<thingCategories>
+								<li>AmmoBolter75</li>
+							</thingCategories>
+							<graphicData>
+								<graphicClass>Graphic_StackCount</graphicClass>
+								<texPath>Things/Ammo/GrenadeLauncher/HE</texPath>
+								<color>(30, 30, 30)</color>
+							</graphicData>
+							<cookOffProjectile>Bullet_Fetid_Bolter</cookOffProjectile>
+							<ammoClass>IncendiaryAP</ammoClass>
+						</ThingDef>
+
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_Fetid_Bolter</defName>
+							<label>cleansing bolter bullet</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Bolter</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>Cleansing</damageDef>
+								<damageAmountBase>5</damageAmountBase>
+								<dropsCasings>true</dropsCasings>
+								<speed>100</speed>
+								<armorPenetrationSharp>20.0</armorPenetrationSharp>
+								<armorPenetrationBlunt>40.0</armorPenetrationBlunt>
+								<secondaryDamage>
+									<li>
+										<def>Flame</def>
+										<amount>30</amount>
+									</li>
+								</secondaryDamage>
+							</projectile>
+						</ThingDef>
+
+						<RecipeDef ParentName="AmmoRecipeBase">
+							<defName>MakeAmmo_Fetid_Bolter</defName>
+							<label>make cleansing bolter cartridges x500</label>
+							<description>Craft 500 cleansing bolter cartridges</description>
+							<jobString>Making 500 cleansing bolter cartridges</jobString>
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Steel</li>
+										</thingDefs>
+									</filter>
+									<count>50</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Chemfuel</li>
+										</thingDefs>
+									</filter>
+									<count>50</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+								<thingDefs>
+									<li>Steel</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<Ammo_Fetid_Bolter>500</Ammo_Fetid_Bolter>
+							</products>
+							<workAmount>4200</workAmount>
+						</RecipeDef>
+
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_20x102mmNATO"]/ammoTypes</xpath>
+					<value>
+						<Ammo_20x102mmNATO_Cleanse>Bullet_20x102mmNATO_Cleanse</Ammo_20x102mmNATO_Cleanse>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+
+						<ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo20x102mmNATOBase">
+							<defName>Ammo_20x102mmNATO_Cleanse</defName>
+							<label>20x102mm NATO (Cleanse)</label>
+							<graphicData>
+								<texPath>Things/Ammo/HighCaliber/Incendiary</texPath>
+								<graphicClass>Graphic_StackCount</graphicClass>
+								<color>(255,0,0)</color>
+							</graphicData>
+							<statBases>
+								<MarketValue>1.35</MarketValue>
+							</statBases>
+							<ammoClass>IncendiaryAP</ammoClass>
+							<cookOffProjectile>Bullet_20x102mmNATO_AP</cookOffProjectile>
+						</ThingDef>
+
+						<ThingDef ParentName="Base20x102mmNATOBullet">
+							<defName>Bullet_20x102mmNATO_Cleanse</defName>
+							<label>20x102mm NATO bullet (Cleanse)</label>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageAmountBase>30</damageAmountBase>
+								<armorPenetrationSharp>15</armorPenetrationSharp>
+								<armorPenetrationBlunt>1029.080</armorPenetrationBlunt>
+								<secondaryDamage>
+									<li>
+										<def>Flame_Secondary</def>
+										<amount>51</amount>
+									</li>
+								</secondaryDamage>
+							</projectile>
+						</ThingDef>
+
+						<RecipeDef ParentName="AdvancedAmmoRecipeBase">
+							<defName>MakeAmmo_20x102mmNATO_Cleanse</defName>
+							<label>make 20x102mm NATO (Cleanse) cartridge x200</label>
+							<description>Craft 200 20x102mm NATO (Cleanse) cartridges.</description>
+							<jobString>Making 20x102mm NATO (Cleanse) cartridges.</jobString>
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Steel</li>
+										</thingDefs>
+									</filter>
+									<count>80</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Chemfuel</li>
+										</thingDefs>
+									</filter>
+									<count>30</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+								<thingDefs>
+									<li>Steel</li>
+									<li>Chemfuel</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<Ammo_20x102mmNATO_Incendiary>200</Ammo_20x102mmNATO_Incendiary>
+							</products>
+							<workAmount>14400</workAmount>
+						</RecipeDef>
+
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_23x75mmR"]/ammoTypes</xpath>
+					<value>
+						<Ammo_23x75mmR_Cleanse>Bullet_23x75mmR_Cleanse</Ammo_23x75mmR_Cleanse>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+
+						<ThingDef Class="CombatExtended.AmmoDef" ParentName="23x75mmRBase">
+							<defName>Ammo_23x75mmR_Cleanse</defName>
+							<label>23x75mmR shell (Cleanse)</label>
+							<graphicData>
+								<texPath>Things/Ammo/Shotgun/Slug</texPath>
+								<graphicClass>Graphic_StackCount</graphicClass>
+							</graphicData>
+							<statBases>
+								<MarketValue>0.36</MarketValue>
+								<Mass>0.086</Mass>
+							</statBases>
+							<ammoClass>Slug</ammoClass>
+							<cookOffProjectile>Bullet_23x75mmR_Cleanse</cookOffProjectile>
+						</ThingDef>
+
+						<ThingDef ParentName="Base23x75mmRBullet">
+							<defName>Bullet_23x75mmR_Cleanse</defName>
+							<label>shotgun cleanse</label>
+							<graphicData>
+								<texPath>Things/Projectile/Bullet_big</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<speed>106</speed>
+								<damageAmountBase>18</damageAmountBase>
+								<armorPenetrationSharp>8</armorPenetrationSharp>
+								<armorPenetrationBlunt>162.5</armorPenetrationBlunt>
+								<casingMoteDefname>Fleck_ShotgunShell_Green</casingMoteDefname>
+								<casingFilthDefname>Filth_ShotgunAmmoCasings_Green</casingFilthDefname>
+								<secondaryDamage>
+									<li>
+										<def>Flame_Secondary</def>
+										<amount>20</amount>
+									</li>
+								</secondaryDamage>
+							</projectile>
+						</ThingDef>
+
+						<RecipeDef ParentName="AmmoRecipeBase">
+							<defName>MakeAmmo_23x75mmR_Cleanse</defName>
+							<label>make 23x75mmR (Cleanse) shell x200</label>
+							<description>Craft 200 23x75mmR (Cleanse) shells.</description>
+							<jobString>Making 23x75mmR (Cleanse) shells.</jobString>
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Steel</li>
+										</thingDefs>
+									</filter>
+									<count>36</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>Chemfuel</li>
+										</thingDefs>
+									</filter>
+									<count>10</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+								<thingDefs>
+									<li>Steel</li>
+									<li>Chemfuel</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<Ammo_23x75mmR_Cleanse>200</Ammo_23x75mmR_Cleanse>
+							</products>
+							<workAmount>3600</workAmount>
+						</RecipeDef>
+
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

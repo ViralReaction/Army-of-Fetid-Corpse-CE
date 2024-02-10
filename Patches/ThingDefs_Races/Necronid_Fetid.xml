@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Body Shapes -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[
+					defName="Necronoid_FetidGhoul" or
+					defName="Necronoid_FetidSoldier" or
+					defName="Necronoid_BladedGhoul" or
+					defName="Necronoid_BloatedOgre" or
+					defName="Necronoid_FetidMarine" or
+					defName="Necronoid_FetidBrute" or
+					defName="Necronoid_FleshMarine" or
+					defName="Necronoid_FetidHulk"]					</xpath>
+					<value>
+						<li Class="CombatExtended.RacePropertiesExtensionCE">
+							<bodyShape>Humanoid</bodyShape>
+						</li>
+					</value>
+				</li>
+	
+				<!-- Fetid Ghoul -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidGhoul"]/statBases</xpath>
+					<value>
+						<MeleeDodgeChance>0.1</MeleeDodgeChance>
+						<MeleeCritChance>0.1</MeleeCritChance>
+						<MeleeParryChance>0.05</MeleeParryChance>
+						<Suppressability>0.0</Suppressability>
+						<PainShockThreshold>0.99</PainShockThreshold>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidSoldier"]/statBases</xpath>
+					<value>
+						<AimingAccuracy>1.0</AimingAccuracy>
+						<ShootingAccuracyPawn>0.5</ShootingAccuracyPawn>
+						<MeleeDodgeChance>0.1</MeleeDodgeChance>
+						<MeleeCritChance>0.1</MeleeCritChance>
+						<MeleeParryChance>0.05</MeleeParryChance>
+						<Suppressability>0.0</Suppressability>
+						<PainShockThreshold>0.99</PainShockThreshold>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidGhoul" or defName="Necronoid_FetidSoldier"]/tools</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>left fist</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>2</power>
+								<cooldownTime>2.0</cooldownTime>
+								<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0.05</armorPenetrationSharp>
+								<armorPenetrationBlunt>0.25</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>right fist</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>2</power>
+								<cooldownTime>2.0</cooldownTime>
+								<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0.05</armorPenetrationSharp>
+								<armorPenetrationBlunt>0.25</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>teeth</label>
+								<capacities>
+									<li>Stab</li>
+								</capacities>
+								<power>4</power>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidStabDamage</def>
+											<amount>14</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<cooldownTime>4</cooldownTime>
+								<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+								<armorPenetrationSharp>0.25</armorPenetrationSharp>
+								<armorPenetrationBlunt>0.5</armorPenetrationBlunt>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidGhoul" or defName="Necronoid_FetidSoldier"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidGhoul" or defName="Necronoid_FetidSoldier"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>0</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<!-- Bladed Ghoul -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_BladedGhoul"]/statBases</xpath>
+					<value>
+						<MeleeDodgeChance>0.13</MeleeDodgeChance>
+						<MeleeCritChance>0.12</MeleeCritChance>
+						<MeleeParryChance>0.09</MeleeParryChance>
+						<Suppressability>0.0</Suppressability>
+						<PainShockThreshold>0.99</PainShockThreshold>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_BladedGhoul"]/tools</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>left claws</label>
+								<capacities>
+									<li>Cut</li>
+								</capacities>
+								<power>24</power>
+								<cooldownTime>2.07</cooldownTime>
+								<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>5</armorPenetrationSharp>
+								<armorPenetrationBlunt>4</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>left claws</label>
+								<capacities>
+									<li>Stab</li>
+								</capacities>
+								<power>5</power>
+								<cooldownTime>1.33</cooldownTime>
+								<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>40</armorPenetrationSharp>
+								<armorPenetrationBlunt>20</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>right claws</label>
+								<capacities>
+									<li>Cut</li>
+								</capacities>
+								<power>24</power>
+								<cooldownTime>2.07</cooldownTime>
+								<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>5</armorPenetrationSharp>
+								<armorPenetrationBlunt>4</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>right claws</label>
+								<capacities>
+									<li>Stab</li>
+								</capacities>
+								<power>5</power>
+								<cooldownTime>1.33</cooldownTime>
+								<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>40</armorPenetrationSharp>
+								<armorPenetrationBlunt>20</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>teeth</label>
+								<capacities>
+									<li>Bite</li>
+								</capacities>
+								<power>4</power>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidStabDamage</def>
+											<amount>14</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<cooldownTime>4</cooldownTime>
+								<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+								<armorPenetrationSharp>0.25</armorPenetrationSharp>
+								<armorPenetrationBlunt>0.5</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>head</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>6</power>
+								<cooldownTime>5.9</cooldownTime>
+								<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+								<chanceFactor>0.2</chanceFactor>
+								<armorPenetrationBlunt>1.875</armorPenetrationBlunt>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_BladedGhoul"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>10</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_BladedGhoul"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>4</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<!-- Fetid Brute -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidBrute"]/statBases</xpath>
+					<value>
+						<MeleeDodgeChance>0.10</MeleeDodgeChance>
+						<MeleeCritChance>0.05</MeleeCritChance>
+						<MeleeParryChance>0.09</MeleeParryChance>
+						<AimingAccuracy>1.0</AimingAccuracy>
+						<ShootingAccuracyPawn>1.00</ShootingAccuracyPawn>
+						<Suppressability>0.0</Suppressability>
+						<PainShockThreshold>0.99</PainShockThreshold>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidBrute"]/tools</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>left fist</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>15</power>
+								<cooldownTime>2.07</cooldownTime>
+								<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>15</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>right fist</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>15</power>
+								<cooldownTime>2.07</cooldownTime>
+								<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>15</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>teeth</label>
+								<capacities>
+									<li>Bite</li>
+								</capacities>
+								<power>4</power>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidStabDamage</def>
+											<amount>14</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<cooldownTime>4</cooldownTime>
+								<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+								<armorPenetrationSharp>0.25</armorPenetrationSharp>
+								<armorPenetrationBlunt>0.5</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>head</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>6</power>
+								<cooldownTime>5.9</cooldownTime>
+								<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+								<chanceFactor>0.2</chanceFactor>
+								<armorPenetrationBlunt>1.875</armorPenetrationBlunt>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidBrute"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>10</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidBrute"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>4</ArmorRating_Sharp>
+					</value>
+				</li>
+				
+				
+				<!-- Bloated Ogre -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_BloatedOgre"]/statBases</xpath>
+					<value>
+						<AimingAccuracy>1.0</AimingAccuracy>
+						<ShootingAccuracyPawn>0.5</ShootingAccuracyPawn>
+						<MeleeDodgeChance>0.10</MeleeDodgeChance>
+						<MeleeCritChance>0.05</MeleeCritChance>
+						<MeleeParryChance>0.09</MeleeParryChance>
+						<Suppressability>0.0</Suppressability>
+						<PainShockThreshold>0.99</PainShockThreshold>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_BloatedOgre"]/tools</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>left fist</label>
+								<capacities>
+									<li>Demolish</li>
+								</capacities>
+								<power>30</power>
+								<cooldownTime>1.78</cooldownTime>
+								<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>30</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>right fist</label>
+								<capacities>
+									<li>Demolish</li>
+								</capacities>
+								<power>30</power>
+								<cooldownTime>1.78</cooldownTime>
+								<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>30</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<capacities>
+									<li>Bite</li>
+								</capacities>
+								<power>19</power>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<cooldownTime>1.62</cooldownTime>
+								<chanceFactor>0.7</chanceFactor>
+								<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+								<armorPenetrationSharp>0.09</armorPenetrationSharp>
+								<armorPenetrationBlunt>2.016</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>head</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>11</power>
+								<cooldownTime>2.52</cooldownTime>
+								<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+								<chanceFactor>0.2</chanceFactor>
+								<armorPenetrationBlunt>6</armorPenetrationBlunt>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_BloatedOgre"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>60</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_BloatedOgre"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>20</ArmorRating_Sharp>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Necronoid_BloatedOgre"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Necronoid_BloatedOgre"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_BloatedOgre"]/comps</xpath>
+					<value>
+						<li Class="CombatExtended.CompProperties_ArmorDurability">
+							<Durability>3000</Durability>
+							<Regenerates>true</Regenerates>
+							<RegenInterval>600</RegenInterval>
+							<RegenValue>5</RegenValue>
+							<MinArmorPct>0.75</MinArmorPct>
+						</li>
+					</value>
+				</li>
+				
+				<!-- Fetid Marine -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidMarine" or defName="Necronoid_FleshMarine"]/statBases</xpath>
+					<value>
+						<AimingAccuracy>1.0</AimingAccuracy>
+						<ShootingAccuracyPawn>1.0</ShootingAccuracyPawn>
+						<MeleeDodgeChance>0.10</MeleeDodgeChance>
+						<MeleeCritChance>0.05</MeleeCritChance>
+						<MeleeParryChance>0.09</MeleeParryChance>
+						<Suppressability>0.0</Suppressability>
+						<PainShockThreshold>0.99</PainShockThreshold>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidMarine" or defName="Necronoid_FleshMarine"]/tools</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>left fist</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>8</power>
+								<cooldownTime>2.0</cooldownTime>
+								<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>4</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>right fist</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>8</power>
+								<cooldownTime>2.0</cooldownTime>
+								<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>4</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>head</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>4</power>
+								<cooldownTime>2.52</cooldownTime>
+								<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+								<chanceFactor>0.2</chanceFactor>
+								<armorPenetrationBlunt>2.5</armorPenetrationBlunt>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidMarine" or defName="Necronoid_FleshMarine"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>34</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidMarine" or defName="Necronoid_FleshMarine"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>16</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidMarine" or defName="Necronoid_FleshMarine"]/statBases/ArmorRating_Heat</xpath>
+					<value>
+						<ArmorRating_Heat>0.46</ArmorRating_Heat>
+					</value>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidMarine"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Necronoid_FetidMarine"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Necronoid_FleshMarine"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Necronoid_FleshMarine"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidMarine" or defName="Necronoid_FleshMarine"]/comps</xpath>
+					<value>
+						<li Class="CombatExtended.CompProperties_ArmorDurability">
+							<Durability>600</Durability>
+							<Regenerates>true</Regenerates>
+							<RegenInterval>600</RegenInterval>
+							<RegenValue>5</RegenValue>
+							<MinArmorPct>0.50</MinArmorPct>
+						</li>
+					</value>
+				</li>
+
+				<!-- Fetid Hulk -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidHulk"]/statBases</xpath>
+					<value>
+						<AimingAccuracy>1.0</AimingAccuracy>
+						<MeleeDodgeChance>0.10</MeleeDodgeChance>
+						<MeleeCritChance>0.05</MeleeCritChance>
+						<MeleeParryChance>0.09</MeleeParryChance>
+						<Suppressability>0.0</Suppressability>
+						<PainShockThreshold>0.99</PainShockThreshold>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidHulk"]/tools</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>left fist</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>8</power>
+								<cooldownTime>2.0</cooldownTime>
+								<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>4</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>right fist</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>8</power>
+								<cooldownTime>2.0</cooldownTime>
+								<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+								<surpriseAttack>
+									<extraMeleeDamages>
+										<li>
+											<def>NecronoidCutDamage</def>
+											<amount>19</amount>
+										</li>
+									</extraMeleeDamages>
+								</surpriseAttack>
+								<armorPenetrationSharp>0</armorPenetrationSharp>
+								<armorPenetrationBlunt>4</armorPenetrationBlunt>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>head</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>4</power>
+								<cooldownTime>2.52</cooldownTime>
+								<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+								<chanceFactor>0.2</chanceFactor>
+								<armorPenetrationBlunt>2.5</armorPenetrationBlunt>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidHulk"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>17</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidHulk"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>6</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidHulk"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Necronoid_FetidHulk"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Necronoid_FetidHulk"]/comps</xpath>
+					<value>
+						<li Class="CombatExtended.CompProperties_ArmorDurability">
+							<Durability>2000</Durability>
+							<Regenerates>true</Regenerates>
+							<RegenInterval>600</RegenInterval>
+							<RegenValue>5</RegenValue>
+							<MinArmorPct>0.25</MinArmorPct>
+						</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

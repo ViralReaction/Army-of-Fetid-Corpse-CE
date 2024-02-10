@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Tools -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Gun_SuperSMG" or defName="Gun_SuperShotGun" or defName="Gun_SurvivalistSniperRifle"]/tools
+					</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>stock</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>8</power>
+								<cooldownTime>1.55</cooldownTime>
+								<chanceFactor>1.5</chanceFactor>
+								<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+								<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>barrel</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>5</power>
+								<cooldownTime>2.02</cooldownTime>
+								<armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+								<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>muzzle</label>
+								<capacities>
+									<li>Poke</li>
+								</capacities>
+								<power>8</power>
+								<cooldownTime>1.55</cooldownTime>
+								<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+								<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<!-- PPSH-41 -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_SuperSMG</defName>
+					<statBases>
+						<Mass>3.63</Mass>
+						<RangedWeapon_Cooldown>0.36</RangedWeapon_Cooldown>
+						<SightsEfficiency>1.00</SightsEfficiency>
+						<ShotSpread>0.12</ShotSpread>
+						<SwayFactor>1.21</SwayFactor>
+						<Bulk>9.43</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>1.46</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_762x25mmTokarev_FMJ</defaultProjectile>
+						<warmupTime>0.6</warmupTime>
+						<range>28</range>
+						<burstShotCount>6</burstShotCount>
+						<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+						<soundCast>Shot_SovietSubmachineGun</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<muzzleFlashScale>9</muzzleFlashScale>
+					</Properties>
+					<AmmoUser>
+						<magazineSize>71</magazineSize>
+						<reloadTime>4.9</reloadTime>
+						<ammoSet>AmmoSet_762x25mmTokarev</ammoSet>
+					</AmmoUser>
+					<FireModes>
+						<aiUseBurstMode>FALSE</aiUseBurstMode>
+						<aiAimMode>Snapshot</aiAimMode>
+						<aimedBurstShotCount>3</aimedBurstShotCount>
+					</FireModes>
+					<weaponTags>
+						<li>CE_AI_AssaultWeapon</li>
+					</weaponTags>
+				</li>
+				
+				<!-- Remington 870 -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_SuperShotGun</defName>
+					<statBases>
+						<Mass>3.40</Mass>
+						<RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
+						<SightsEfficiency>1</SightsEfficiency>
+						<ShotSpread>0.14</ShotSpread>
+						<SwayFactor>1.32</SwayFactor>
+						<Bulk>9.78</Bulk>
+					</statBases>
+					<Properties>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_12Gauge_Buck</defaultProjectile>
+						<warmupTime>0.6</warmupTime>
+						<range>16</range>
+						<soundCast>Shot_Remington870</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<muzzleFlashScale>9</muzzleFlashScale>
+					</Properties>
+					<AmmoUser>
+						<magazineSize>6</magazineSize>
+						<reloadOneAtATime>true</reloadOneAtATime>
+						<reloadTime>0.85</reloadTime>
+						<ammoSet>AmmoSet_12Gauge</ammoSet>
+					</AmmoUser>
+					<FireModes>
+						<aiUseBurstMode>FALSE</aiUseBurstMode>
+						<aiAimMode>Snapshot</aiAimMode>
+					</FireModes>
+					<weaponTags>
+						<li>CE_AI_AssaultWeapon</li>
+					</weaponTags>
+				</li>
+				
+				<!-- Survivalist Rifle -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_SurvivalistSniperRifle</defName>
+					<statBases>
+						<Mass>4.19</Mass>
+						<RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown>
+						<SightsEfficiency>1</SightsEfficiency>
+						<ShotSpread>0.02</ShotSpread>
+						<SwayFactor>1.68</SwayFactor>
+						<Bulk>12.60</Bulk>
+					</statBases>
+					<Properties>
+					  <recoilAmount>2.04</recoilAmount>
+					  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					  <hasStandardCommand>true</hasStandardCommand>
+					  <defaultProjectile>Bullet_3006Springfield_FMJ</defaultProjectile>
+					  <warmupTime>1.1</warmupTime>
+					  <range>55</range>
+					  <soundCast>Shot_BoltActionRifle</soundCast>
+					  <soundCastTail>GunTail_Heavy</soundCastTail>
+					  <muzzleFlashScale>9</muzzleFlashScale>
+					</Properties>
+					<AmmoUser>
+						<magazineSize>10</magazineSize>
+						<reloadTime>4.3</reloadTime>
+						<ammoSet>AmmoSet_3006Springfield</ammoSet>
+					</AmmoUser>
+					<FireModes>
+						<aiUseBurstMode>FALSE</aiUseBurstMode>
+						<aiAimMode>Snapshot</aiAimMode>
+					</FireModes>
+					<weaponTags>
+						<li>CE_AI_SR</li>
+					</weaponTags>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

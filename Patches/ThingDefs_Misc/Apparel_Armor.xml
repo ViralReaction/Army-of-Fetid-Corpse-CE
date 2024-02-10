@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Base -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/statBases</xpath>
+					<value>
+						<Bulk>100</Bulk>
+						<WornBulk>15</WornBulk>
+						<NightVisionEfficiency_Apparel>0.75</NightVisionEfficiency_Apparel>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/statBases/MaxHitPoints</xpath>
+					<value>
+						<MaxHitPoints>600</MaxHitPoints>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/statBases/Mass</xpath>
+					<value>
+						<Mass>80</Mass>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/statBases/Flammability</xpath>
+					<value>
+						<Flammability>0</Flammability>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>30</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>65</ArmorRating_Blunt>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/statBases/ArmorRating_Heat</xpath>
+					<value>
+						<ArmorRating_Heat>0.80</ArmorRating_Heat>
+					</value>
+				</li>
+
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/equippedStatOffsets/MoveSpeed</xpath>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/equippedStatOffsets</xpath>
+					<value>
+						<CarryWeight>100</CarryWeight>
+						<CarryBulk>20</CarryBulk>
+						<ShootingAccuracyPawn>0.15</ShootingAccuracyPawn>
+						<ToxicEnvironmentResistance>1.0</ToxicEnvironmentResistance>
+						<PsychicSensitivity>-0.2</PsychicSensitivity>
+						<AimingAccuracy>0.15</AimingAccuracy>
+						<SmokeSensitivity>-1</SmokeSensitivity>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/costList/Plasteel</xpath>
+					<value>
+						<Plasteel>400</Plasteel>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/costList/DevilstrandCloth</xpath>
+					<value>
+						<DevilstrandCloth>100</DevilstrandCloth>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/costList/ComponentSpacer</xpath>
+					<value>
+						<ComponentSpacer>9</ComponentSpacer>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="StalkerArmorPowerBase"]/costList/Uranium</xpath>
+					<value>
+						<Uranium>100</Uranium>
+					</value>
+				</li>
+
+				<!-- Stalker Armor -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor"]/apparel/layers</xpath>
+					<value>
+						<li>Middle</li>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor"]/apparel/bodyPartGroups</xpath>
+					<value>
+						<li>Hands</li>
+						<li>Feet</li>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor"]</xpath>
+					<value>
+						<li Class="CombatExtended.PartialArmorExt">
+							<stats>
+								<li>
+									<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+									<parts>
+										<li>Head</li>
+									</parts>
+								</li>
+								<li>
+									<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+									<parts>
+										<li>Head</li>
+									</parts>
+								</li>
+								<li>
+									<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+									<parts>
+										<li>Hand</li>
+									</parts>
+								</li>
+								<li>
+									<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+									<parts>
+										<li>Hand</li>
+									</parts>
+								</li>
+							</stats>
+						</li>
+					</value>
+				</li>
+
+				<!-- Royal Stalker Armor -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]/equippedStatOffsets</xpath>
+					<value>
+						<CarryWeight>100</CarryWeight>
+						<CarryBulk>20</CarryBulk>
+						<ShootingAccuracyPawn>0.15</ShootingAccuracyPawn>
+						<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+						<PsychicSensitivity>-0.2</PsychicSensitivity>
+						<AimingAccuracy>0.15</AimingAccuracy>
+						<SmokeSensitivity>-1</SmokeSensitivity>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>32</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>70</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]/costList/Plasteel</xpath>
+					<value>
+						<Plasteel>475</Plasteel>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]/costList/DevilstrandCloth</xpath>
+					<value>
+						<DevilstrandCloth>120</DevilstrandCloth>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]/costList/ComponentSpacer</xpath>
+					<value>
+						<ComponentSpacer>12</ComponentSpacer>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]/costList/Uranium</xpath>
+					<value>
+						<Uranium>150</Uranium>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]/apparel/layers</xpath>
+					<value>
+						<li>Middle</li>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]/apparel/bodyPartGroups</xpath>
+					<value>
+						<li>Hands</li>
+						<li>Feet</li>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="Apparel_StalkerPowerArmor_Empire"]</xpath>
+					<value>
+						<li Class="CombatExtended.PartialArmorExt">
+							<stats>
+								<li>
+									<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+									<parts>
+										<li>Head</li>
+									</parts>
+								</li>
+								<li>
+									<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+									<parts>
+										<li>Head</li>
+									</parts>
+								</li>
+								<li>
+									<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+									<parts>
+										<li>Hand</li>
+									</parts>
+								</li>
+								<li>
+									<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+									<parts>
+										<li>Hand</li>
+									</parts>
+								</li>
+							</stats>
+						</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

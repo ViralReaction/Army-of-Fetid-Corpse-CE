@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Tools -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="NecronoidWeaponBase"]/tools
+					</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>stock</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>8</power>
+								<cooldownTime>1.55</cooldownTime>
+								<chanceFactor>1.5</chanceFactor>
+								<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+								<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>barrel</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>5</power>
+								<cooldownTime>2.02</cooldownTime>
+								<armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+								<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+							</li>
+							<li Class="CombatExtended.ToolCE">
+								<label>muzzle</label>
+								<capacities>
+									<li>Poke</li>
+								</capacities>
+								<power>8</power>
+								<cooldownTime>1.55</cooldownTime>
+								<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+								<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+							</li>
+						</tools>
+					</value>
+				</li>
+
+				<!-- Plague Spewer -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_PlagueSpewer</defName>
+					<statBases>
+						<Mass>5.5</Mass>
+						<RangedWeapon_Cooldown>2.36</RangedWeapon_Cooldown>
+						<SightsEfficiency>1.0</SightsEfficiency>
+						<ShotSpread>0.07</ShotSpread>
+						<SwayFactor>1.33</SwayFactor>
+						<Bulk>10</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>1.50</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_PlagueSpewer</defaultProjectile>
+						<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+						<warmupTime>1.1</warmupTime>
+						<range>20</range>
+						<burstShotCount>1</burstShotCount>
+						<soundCast>Shot_Necronoid_Shotgun</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<muzzleFlashScale>5</muzzleFlashScale>
+					</Properties>
+					<FireModes>
+						<aiUseBurstMode>FALSE</aiUseBurstMode>
+						<aiAimMode>Snapshot</aiAimMode>
+					</FireModes>
+					<weaponTags>
+						<li>CE_AI_Rifle</li>
+						<li>NoSwitch</li>
+					</weaponTags>
+				</li>
+				
+				<!-- Boneshard Rifle -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_BoneshardRifle</defName>
+					<statBases>
+						<Mass>5.5</Mass>
+						<RangedWeapon_Cooldown>2.36</RangedWeapon_Cooldown>
+						<SightsEfficiency>1.0</SightsEfficiency>
+						<ShotSpread>0.17</ShotSpread>
+						<SwayFactor>1.33</SwayFactor>
+						<Bulk>10</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>1.50</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_BoneShard</defaultProjectile>
+						<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+						<warmupTime>1.1</warmupTime>
+						<range>55</range>
+						<burstShotCount>6</burstShotCount>
+						<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+						<soundCast>Shot_Necronoid_Pistol</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<muzzleFlashScale>5</muzzleFlashScale>
+					</Properties>
+					<FireModes>
+						<aimedBurstShotCount>3</aimedBurstShotCount>
+						<aiUseBurstMode>TRUE</aiUseBurstMode>
+						<aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+					<weaponTags>
+						<li>CE_AI_AR</li>
+						<li>NoSwitch</li>
+					</weaponTags>
+				</li>
+
+				<!-- Boneshard Shotgun -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_BoneshardShotgun</defName>
+					<statBases>
+						<Mass>5.5</Mass>
+						<RangedWeapon_Cooldown>2.36</RangedWeapon_Cooldown>
+						<SightsEfficiency>1.0</SightsEfficiency>
+						<ShotSpread>0.15</ShotSpread>
+						<SwayFactor>1.26</SwayFactor>
+						<Bulk>10</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>2.75</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_Boneshard_Buck</defaultProjectile>
+						<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+						<warmupTime>0.6</warmupTime>
+						<range>16</range>
+						<soundCast>Shot_Necronoid_Shotgun</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<muzzleFlashScale>5</muzzleFlashScale>
+					</Properties>
+					<FireModes>
+						<aiAimMode>Snapshot</aiAimMode>
+					</FireModes>
+					<weaponTags>
+						<li>CE_AI_BROOM</li>
+						<li>NoSwitch</li>
+					</weaponTags>
+				</li>
+				
+				<!-- Boneshard Cannon -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_BoneshardAutoCannon</defName>
+					<statBases>
+						<Mass>20</Mass>
+						<SwayFactor>1.80</SwayFactor>
+						<ShotSpread>0.08</ShotSpread>
+						<SightsEfficiency>1</SightsEfficiency>
+						<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+						<Bulk>25</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>1.99</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_Boneshard_Autocannon</defaultProjectile>
+						<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+						<warmupTime>1.1</warmupTime>
+						<range>60</range>
+						<burstShotCount>3</burstShotCount>
+						<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+						<soundCast>Shot_Necronoid_Shotgun</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<muzzleFlashScale>12</muzzleFlashScale>
+					</Properties>
+					<FireModes>
+						<aiUseBurstMode>true</aiUseBurstMode>
+						<aiAimMode>Snapshot</aiAimMode>
+						<aimedBurstShotCount>2</aimedBurstShotCount>
+					</FireModes>
+					<AllowWithRunAndGun>false</AllowWithRunAndGun>
+				</li>
+				
+				<!-- Boneshard Advanced -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_AdvancedBoneshardRifle</defName>
+					<statBases>
+						<Mass>3.0</Mass>
+						<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+						<SightsEfficiency>1.20</SightsEfficiency>
+						<ShotSpread>0.08</ShotSpread>
+						<SwayFactor>1.20</SwayFactor>
+						<Bulk>7.00</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>1.46</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_Boneshard_Advanced</defaultProjectile>
+						<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+						<warmupTime>1.0</warmupTime>
+						<range>55</range>
+						<burstShotCount>8</burstShotCount>
+						<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+						<soundCast>Shot_Necronoid_Pistol</soundCast>
+						<soundCastTail>GunTail_Medium</soundCastTail>
+						<muzzleFlashScale>9</muzzleFlashScale>
+					</Properties>
+					<FireModes>
+						<aimedBurstShotCount>4</aimedBurstShotCount>
+						<aiUseBurstMode>TRUE</aiUseBurstMode>
+						<aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+					<weaponTags>
+						<li>CE_AI_AR</li>
+						<li>NoSwitch</li>
+					</weaponTags>
+					<AllowWithRunAndGun>false</AllowWithRunAndGun>
+				</li>
+
+				<!-- Boneshard Avenger -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_BoneshardRapidBlaster</defName>
+					<statBases>
+						<Mass>8</Mass>
+						<RangedWeapon_Cooldown>1.36</RangedWeapon_Cooldown>
+						<SightsEfficiency>2.6</SightsEfficiency>
+						<ShotSpread>0.05</ShotSpread>
+						<SwayFactor>1.35</SwayFactor>
+						<Bulk>10</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>1.50</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_Boneshard_Minigun</defaultProjectile>
+						<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+						<warmupTime>1.8</warmupTime>
+						<range>75</range>
+						<burstShotCount>50</burstShotCount>
+						<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+						<soundCast>Shot_Necronoid_Pistol</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<muzzleFlashScale>9</muzzleFlashScale>
+					</Properties>
+					<FireModes>
+					  <aiAimMode>AimedShot</aiAimMode>
+					</FireModes>
+					<weaponTags>
+						<li>CE_AI_SR</li>
+						<li>NoSwitch</li>
+					</weaponTags>
+					<AllowWithRunAndGun>false</AllowWithRunAndGun>
+				</li>
+
+				<!-- Boneshard Avenger -->
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_BoneshardSniperRifle</defName>
+					<statBases>
+						<Mass>20.00</Mass>
+						<RangedWeapon_Cooldown>0.35</RangedWeapon_Cooldown>
+						<SightsEfficiency>1</SightsEfficiency>
+						<ShotSpread>0.06</ShotSpread>
+						<SwayFactor>3.22</SwayFactor>
+						<Bulk>11.92</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>0.97</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_Boneshard_Minigun</defaultProjectile>
+						<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+						<warmupTime>2.1</warmupTime>
+						<range>62</range>
+						<burstShotCount>50</burstShotCount>
+						<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+						<soundCast>Shot_Necronoid_Pistol</soundCast>
+						<soundCastTail>GunTail_Medium</soundCastTail>
+						<muzzleFlashScale>9</muzzleFlashScale>
+					</Properties>
+					<FireModes>
+						<aimedBurstShotCount>25</aimedBurstShotCount>
+						<aiAimMode>Snapshot</aiAimMode>
+					</FireModes>
+					<weaponTags>
+						<li>CE_AI_Suppressive</li>
+						<li>NoSwitch</li>
+					</weaponTags>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+					
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_PlagueSpewer</defName>
+							<label>plague bile</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Green</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>MoteGlow</shaderType>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>AcidBurn</damageDef>
+								<speed>65</speed>
+								<damageAmountBase>10</damageAmountBase>
+								<secondaryDamage>
+									<li>
+										<def>PlagueBile</def>
+										<amount>1</amount>
+									</li>
+								</secondaryDamage>
+							</projectile>
+						</ThingDef>
+						
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_BoneShard</defName>
+							<label>bone shard</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>RangedStab</damageDef>
+								<speed>65</speed>
+								<damageAmountBase>9</damageAmountBase>
+								<armorPenetrationSharp>12</armorPenetrationSharp>
+								<armorPenetrationBlunt>34.18</armorPenetrationBlunt>
+								<secondaryDamage>
+									<li>
+										<def>NecronoidRangeDamage</def>
+										<amount>1</amount>
+										<chance>0.50</chance>
+									</li>
+								</secondaryDamage>
+							</projectile>
+						</ThingDef>
+
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_Boneshard_Buck</defName>
+							<label>bone shard</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<drawSize>0.5</drawSize>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>RangedStab</damageDef>
+								<speed>65</speed>
+								<damageAmountBase>10</damageAmountBase>
+								<pelletCount>14</pelletCount>
+								<armorPenetrationSharp>5</armorPenetrationSharp>
+								<armorPenetrationBlunt>8.1</armorPenetrationBlunt>
+								<spreadMult>15</spreadMult>
+								<secondaryDamage>
+									<li>
+										<def>NecronoidRangeDamage</def>
+										<amount>1</amount>
+										<chance>0.50</chance>
+									</li>
+								</secondaryDamage>
+							</projectile>
+						</ThingDef>
+
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_Boneshard_Autocannon</defName>
+							<label>bone shard</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>(1.5, 3)</drawSize>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>RangedStab</damageDef>
+								<speed>95</speed>
+								<damageAmountBase>36</damageAmountBase>
+								<armorPenetrationSharp>26</armorPenetrationSharp>
+								<armorPenetrationBlunt>570.24</armorPenetrationBlunt>
+								<secondaryDamage>
+									<li>
+										<def>NecronoidRangeDamage</def>
+										<amount>5</amount>
+										<chance>0.50</chance>
+									</li>
+								</secondaryDamage>
+							</projectile>
+						</ThingDef>
+
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_Boneshard_Advanced</defName>
+							<label>charged boneshard</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>RangedStab</damageDef>
+								<damageAmountBase>13</damageAmountBase>
+								<speed>151</speed>
+								<secondaryDamage>
+									<li>
+										<def>Bomb_Secondary</def>
+										<amount>4</amount>
+									</li>
+									<li>
+										<def>NecronoidRangeDamage</def>
+										<amount>2</amount>
+										<chance>0.50</chance>
+									</li>
+								</secondaryDamage>
+								<armorPenetrationSharp>15</armorPenetrationSharp>
+								<armorPenetrationBlunt>25.6</armorPenetrationBlunt>
+							</projectile>
+						</ThingDef>
+
+						<ThingDef ParentName="BaseBulletCE">
+							<defName>Bullet_Boneshard_Minigun</defName>
+							<label>boneshard</label>
+							<graphicData>
+								<texPath>Things/Misc/Bullets/Projectile_Infected</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>RangedStab</damageDef>
+								<speed>120</speed>
+								<damageAmountBase>12</damageAmountBase>
+								<secondaryDamage>
+									<li>
+										<def>NecronoidRangeDamage</def>
+										<amount>1</amount>
+										<chance>0.50</chance>
+									</li>
+								</secondaryDamage>
+								<armorPenetrationSharp>14</armorPenetrationSharp>
+								<armorPenetrationBlunt>66.72</armorPenetrationBlunt>
+							</projectile>
+						</ThingDef>
+
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

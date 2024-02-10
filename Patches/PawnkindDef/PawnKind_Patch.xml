@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/PawnKindDef[defName="Empire_Fighter_NecroHunter"]</xpath>
+					<value>
+						<li Class="CombatExtended.LoadoutPropertiesExtension">
+							<primaryMagazineCount>
+								<min>5</min>
+								<max>6</max>
+							</primaryMagazineCount>
+							<sidearms>
+								<li>
+									<generateChance>0.5</generateChance>
+									<sidearmMoney>
+										<min>3000</min>
+										<max>5000</max>
+									</sidearmMoney>
+									<weaponTags>
+										<li>UltratechMelee</li>
+									</weaponTags>
+								</li>
+								<li>
+									<generateChance>0.5</generateChance>
+									<sidearmMoney>
+										<min>1000</min>
+										<max>2000</max>
+									</sidearmMoney>
+									<weaponTags>
+										<li>CleansingRocketLauncher</li>
+									</weaponTags>
+									<magazineCount>
+										<min>3</min>
+										<max>5</max>
+									</magazineCount>
+								</li>
+							</sidearms>
+						</li>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/PawnKindDef[defName="Empire_Fighter_NecroHunter"]/weaponTags/li[.="CleansingRocketLauncher"]</xpath>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="Empire_Fighter_NecroHunter"]/apparelRequired</xpath>
+					<value>
+							<li>CE_Apparel_Backpack</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

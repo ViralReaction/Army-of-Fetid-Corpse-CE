@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Mech Courier Six -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/PawnKindDef[
+					defName="Mech_CourierSix" or
+					defName="Mech_GunSlinger"]					</xpath>
+					<value>
+						<li Class="CombatExtended.LoadoutPropertiesExtension">
+							<primaryMagazineCount>
+								<min>4</min>
+								<max>5</max>
+							</primaryMagazineCount>
+						</li>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Mech_CourierSix"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Mech_CourierSix"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Mech_GunSlinger"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Mech_GunSlinger"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+	
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Mech_CourierSix" or defName="Mech_GunSlinger"]/comps</xpath>
+					<value>
+						<li Class="CombatExtended.CompProperties_ArmorDurability">
+							<Durability>700</Durability>
+							<Regenerates>true</Regenerates>
+							<RegenInterval>1250</RegenInterval>
+							<RegenValue>5</RegenValue>
+							<Repairable>true</Repairable>
+							<RepairIngredients>
+								<Steel>5</Steel>
+								<Plasteel>5</Plasteel>
+							</RepairIngredients>
+							<RepairTime>300</RepairTime>
+							<RepairValue>200</RepairValue>
+							<CanOverHeal>true</CanOverHeal>
+							<MaxOverHeal>70</MaxOverHeal>
+							<MinArmorPct>0.75</MinArmorPct>
+						</li>
+					</value>
+				</li>
+				
+				<!-- Centipede Sheriff -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/PawnKindDef[defName="Mech_CentipedeSheriff"]/combatPower</xpath>
+					<value>
+						<combatPower>580</combatPower>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAttributeSet">
+					<xpath>Defs/ThingDef[defName="Mech_CentipedeSheriff"]</xpath>
+					<attribute>ParentName</attribute>
+					<value>MechCentipede</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Mech_CentipedeSheriff"]/race/body</xpath>
+					<value>
+						<body>MechanicalCentipede</body>
+					</value>
+				</li>
+
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="Mech_CentipedeSheriff"]/statBases</xpath>
+				</li>
+
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="Mech_CentipedeSheriff"]/tools</xpath>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
