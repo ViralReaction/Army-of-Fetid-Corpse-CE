@@ -14,6 +14,16 @@
 						<hediffGiverSets Inherit="false"/>
 					</value>
 				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="BasePlayerNecronoid"]/race/hediffGiverSets</xpath>
+					<value>
+						<hediffGiverSets Inherit="false">
+							<li>MutationsFriendly</li>
+						</hediffGiverSets>
+					</value>
+				</li>
+
 				<!-- Body Shapes -->
 				<li Class="PatchOperationAddModExtension">
 					<xpath>Defs/ThingDef[
@@ -31,7 +41,7 @@
 						</li>
 					</value>
 				</li>
-	
+
 				<!-- Fetid Ghoul -->
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ThingDef[defName="Necronoid_FetidGhoul"]/statBases</xpath>
