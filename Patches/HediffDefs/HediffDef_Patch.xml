@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Hardened Flesh -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/HediffDef[defName="HardenedFlesh"]/stages/li/statOffsets/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>6</ArmorRating_Blunt>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/HediffDef[defName="HardenedFlesh"]/stages/li/statOffsets/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>3</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<!-- Corpse Gladiator -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/HediffDef[defName="CorpseGladiator"]/stages/li/statFactors/MeleeDPS</xpath>
+					<value>
+						<MeleeDPS>1.40</MeleeDPS>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/HediffDef[defName="CorpseGladiator"]/stages/li/statFactors/MeleeDamageFactor</xpath>
+					<value>
+						<MeleeDamageFactor>1.40</MeleeDamageFactor>
+					</value>
+				</li>
+				
+				<!-- Hediff Giver Set -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/HediffGiverSetDef[defName="Mutations"]/hediffGivers/li[contains(hediff, "Painless")]/ageFractionChanceCurve/points</xpath>
+					<value>
+						<points>
+							<li>(0,1)</li>
+						</points>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
