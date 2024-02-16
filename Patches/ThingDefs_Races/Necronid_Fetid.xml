@@ -8,6 +8,12 @@
 		<match Class="PatchOperationSequence">
 			<operations>
 
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="BaseNecronoid"]/race</xpath>
+					<value>
+						<hediffGiverSets Inherit="false"/>
+					</value>
+				</li>
 				<!-- Body Shapes -->
 				<li Class="PatchOperationAddModExtension">
 					<xpath>Defs/ThingDef[
