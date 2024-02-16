@@ -213,25 +213,22 @@
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 					<defName>Gun_Craftable_BoneshardSniperRifle</defName>
 					<statBases>
-						<Mass>20.00</Mass>
-						<RangedWeapon_Cooldown>0.35</RangedWeapon_Cooldown>
-						<SightsEfficiency>1</SightsEfficiency>
-						<ShotSpread>0.06</ShotSpread>
-						<SwayFactor>3.22</SwayFactor>
-						<Bulk>11.92</Bulk>
+						<Mass>8</Mass>
+						<RangedWeapon_Cooldown>1.36</RangedWeapon_Cooldown>
+						<SightsEfficiency>2.6</SightsEfficiency>
+						<ShotSpread>0.05</ShotSpread>
+						<SwayFactor>1.35</SwayFactor>
+						<Bulk>10</Bulk>
 					</statBases>
 					<Properties>
-						<recoilAmount>0.97</recoilAmount>
+						<recoilAmount>1.50</recoilAmount>
 						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 						<hasStandardCommand>true</hasStandardCommand>
-						<defaultProjectile>Bullet_Fetid_Boneshard_Minigun</defaultProjectile>
-						<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-						<warmupTime>2.1</warmupTime>
-						<range>62</range>
-						<burstShotCount>50</burstShotCount>
-						<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+						<defaultProjectile>Bullet_Boneshard_Minigun</defaultProjectile>
+						<warmupTime>1.8</warmupTime>
+						<range>75</range>
 						<soundCast>Shot_Necronoid_Pistol</soundCast>
-						<soundCastTail>GunTail_Medium</soundCastTail>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
 						<muzzleFlashScale>9</muzzleFlashScale>
 					</Properties>
 					<AmmoUser>
@@ -240,13 +237,13 @@
 						<ammoSet>AmmoSet_Fetid_Boneshard_Minigun</ammoSet>
 					</AmmoUser>
 					<FireModes>
-						<aimedBurstShotCount>25</aimedBurstShotCount>
-						<aiAimMode>Snapshot</aiAimMode>
+					  <aiAimMode>AimedShot</aiAimMode>
 					</FireModes>
 					<weaponTags>
-						<li>CE_AI_Suppressive</li>
+						<li>CE_AI_SR</li>
 						<li>NoSwitch</li>
 					</weaponTags>
+					<AllowWithRunAndGun>false</AllowWithRunAndGun>
 				</li>
 
 			</operations>
