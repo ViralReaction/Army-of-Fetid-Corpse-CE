@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Cleansing Weapons -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="CleansingWeapons"]/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>Fabrication</li>
+							<li>BiofuelRefining</li>
+						</prerequisites>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="CleansingWeaponsEmpire"]/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>CleansingWeapons</li>
+						</prerequisites>
+					</value>
+				</li>
+
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="IncendiaryWeapons"]</xpath>
+				</li>
+
+				<!-- Necro Weapons -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="NecroWeapons"]/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>BiofuelRefining</li>
+						</prerequisites>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+</Patch>

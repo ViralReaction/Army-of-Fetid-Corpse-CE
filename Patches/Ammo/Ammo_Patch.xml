@@ -41,6 +41,7 @@
 							<tradeTags>
 								<li>HPAmmo</li>
 								<li>CE_AutoEnableTrade</li>
+								<li>CE_AutoEnableCrafting</li>
 							</tradeTags>
 							<thingCategories>
 								<li>AmmoBolter75</li>
@@ -48,7 +49,6 @@
 							<graphicData>
 								<graphicClass>Graphic_StackCount</graphicClass>
 								<texPath>Things/Ammo/GrenadeLauncher/HE</texPath>
-								<color>(30, 30, 30)</color>
 							</graphicData>
 							<cookOffProjectile>Bullet_Fetid_Bolter</cookOffProjectile>
 							<ammoClass>IncendiaryAP</ammoClass>
@@ -110,6 +110,7 @@
 								<Ammo_Fetid_Bolter>500</Ammo_Fetid_Bolter>
 							</products>
 							<workAmount>4200</workAmount>
+							<researchPrerequisite Inherit="false">CleansingWeapons</researchPrerequisite>
 						</RecipeDef>
 
 					</value>
@@ -145,6 +146,7 @@
 							<defName>Bullet_20x102mmNATO_Cleanse</defName>
 							<label>20x102mm NATO bullet (Cleanse)</label>
 							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<damageDef>CleansingGreater</damageDef>
 								<damageAmountBase>30</damageAmountBase>
 								<armorPenetrationSharp>15</armorPenetrationSharp>
 								<armorPenetrationBlunt>1029.080</armorPenetrationBlunt>
@@ -187,9 +189,10 @@
 								</thingDefs>
 							</fixedIngredientFilter>
 							<products>
-								<Ammo_20x102mmNATO_Incendiary>200</Ammo_20x102mmNATO_Incendiary>
+								<Ammo_20x102mmNATO_Cleanse>200</Ammo_20x102mmNATO_Cleanse>
 							</products>
 							<workAmount>14400</workAmount>
+							<researchPrerequisite Inherit="false">CleansingWeapons</researchPrerequisite>
 						</RecipeDef>
 
 					</value>
@@ -230,6 +233,7 @@
 							</graphicData>
 							<projectile Class="CombatExtended.ProjectilePropertiesCE">
 								<speed>106</speed>
+								<damageDef>Cleansing</damageDef>
 								<damageAmountBase>18</damageAmountBase>
 								<armorPenetrationSharp>8</armorPenetrationSharp>
 								<armorPenetrationBlunt>162.5</armorPenetrationBlunt>
@@ -277,6 +281,7 @@
 								<Ammo_23x75mmR_Cleanse>200</Ammo_23x75mmR_Cleanse>
 							</products>
 							<workAmount>3600</workAmount>
+							<researchPrerequisite Inherit="false">CleansingWeapons</researchPrerequisite>
 						</RecipeDef>
 
 					</value>

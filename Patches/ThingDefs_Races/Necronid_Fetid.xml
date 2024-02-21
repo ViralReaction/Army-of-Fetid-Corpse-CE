@@ -7,6 +7,15 @@
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
+			
+				<!-- Abstract Base -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="BaseNecronoid"]/statBases/Flammability</xpath>
+					<value>
+						<Flammability>2</Flammability>
+						<SmokeSensitivity>0</SmokeSensitivity>
+					</value>
+				</li>
 
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ThingDef[@Name="BaseNecronoid"]/race</xpath>

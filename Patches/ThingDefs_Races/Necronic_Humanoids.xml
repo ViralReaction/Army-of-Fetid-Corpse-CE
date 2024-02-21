@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/FactionDef[defName="Necronoid"]/pawnGroupMakers/li/options/LowTier_FleshSlave</xpath>
+				</li>
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/FactionDef[defName="Necronoid"]/pawnGroupMakers/li/options/MidTier_FleshSlave</xpath>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/PawnKindDef[defName="FleshBoss"]/combatPower</xpath>
+					<value>
+						<combatPower>100001</combatPower>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

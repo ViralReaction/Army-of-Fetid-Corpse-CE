@@ -58,7 +58,7 @@
 					</value>
 				</li>
 
-<!-- Tools -->
+				<!-- Tools -->
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="Gun_CleansingRocketLauncher"]/tools
 					</xpath>
@@ -135,8 +135,9 @@
 						<li>IncendiaryRiflez</li>
 						<li>IndustrialGunAdvanced</li>
 					</weaponTags>
+					<researchPrerequisite>GasOperation</researchPrerequisite>
 				</li>
-				
+
 				<!-- Lahti L-39 -->
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="Gun_IncendiaryAntiMaterial"]/label</xpath>
@@ -183,8 +184,9 @@
 						<li>IncendiaryRiflez</li>
 						<li>IndustrialGunAdvanced</li>
 					</weaponTags>
+					<researchPrerequisite>CE_TurretHeavyWeapons</researchPrerequisite>
 				</li>
-				
+
 				<!-- Sturmgewehr 44 -->
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="Gun_IncendiaryAssaultRifle"]/label</xpath>
@@ -236,6 +238,7 @@
 						<li>IncendiaryRiflez</li>
 						<li>IndustrialGunAdvanced</li>
 					</weaponTags>
+					<researchPrerequisite>GasOperation</researchPrerequisite>
 				</li>
 
 				<!-- Heavy Flamer -->
@@ -286,12 +289,13 @@
 						<li>GunHeavy</li>
 						<li>CE_AI_AOE</li>
 					</weaponTags>
+					<researchPrerequisite>CE_Launchers</researchPrerequisite>
 				</li>
-				
+
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="Gun_HeavyFlamer"]/comps/li[@Class="CompProperties_Reloadable"]</xpath>
 				</li>
-				
+
 				<!-- Cleansing Bolter -->
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 					<defName>Gun_CleansingBolter</defName>
@@ -328,11 +332,11 @@
 					</FireModes>
 					<weaponTags>
 						<li>CE_AI_AR</li>
-						 <li>CleanseBolter</li>
+						<li>CleanseBolter</li>
 						<li>SpacerGun</li>
 					</weaponTags>
 				</li>
-				
+
 				<!-- Imperial Cleansing Bolter -->
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 					<defName>Gun_ImperialCleansingBolter</defName>
@@ -373,7 +377,7 @@
 						<li>SpacerGun</li>
 					</weaponTags>
 				</li>
-				
+
 				<!-- Cleansing Autocannon -->
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 					<defName>Gun_ImperialCleansingAutocannon</defName>
@@ -387,9 +391,9 @@
 						<WorkToMake>41000</WorkToMake>
 					</statBases>
 					<costList>
-					  <Steel>170</Steel>
-					  <ComponentIndustrial>4</ComponentIndustrial>
-					  <Chemfuel>20</Chemfuel>
+						<Steel>170</Steel>
+						<ComponentIndustrial>4</ComponentIndustrial>
+						<Chemfuel>20</Chemfuel>
 					</costList>
 					<Properties>
 						<recoilAmount>2.6</recoilAmount>
@@ -416,10 +420,10 @@
 						<li>SniperRifle</li>
 						<li>Bipod_ATR</li>
 						<li>CE_AI_SR</li>
-						 <li>CleanseAutocannonImperial</li>
+						<li>CleanseAutocannonImperial</li>
 					</weaponTags>
 				</li>
-				
+
 				<!-- Imperial Cleansing Bolter MG -->
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 					<defName>Gun_ImperialCleansingBolterMG</defName>
@@ -455,7 +459,7 @@
 						<noSnapshot>true</noSnapshot>
 					</FireModes>
 				</li>
-				
+
 				<!-- KS-23 -->
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 					<defName>Gun_CleansingShotgun</defName>
@@ -493,8 +497,9 @@
 						<aiUseBurstMode>FALSE</aiUseBurstMode>
 						<aiAimMode>Snapshot</aiAimMode>
 					</FireModes>
+					<researchPrerequisite>Gunsmithing</researchPrerequisite>
 				</li>
-				
+
 				<!-- Rocket Launcher -->
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 					<defName>Gun_CleansingRocketLauncher</defName>
@@ -516,7 +521,7 @@
 					<Properties>
 						<verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
 						<hasStandardCommand>true</hasStandardCommand>
-						<defaultProjectile>Bullet_M72LAW</defaultProjectile>
+						<defaultProjectile>Bullet_CleansingRocket</defaultProjectile>
 						<warmupTime>1.9</warmupTime>
 						<range>31</range>
 						<minRange>2</minRange>
@@ -540,6 +545,69 @@
 						<li>CE_AI_AOE</li>
 						<li>CleansingRocketLauncher</li>
 					</weaponTags>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+						<ThingDef ParentName="BaseRPG7Grenade">
+							<defName>Bullet_CleansingRocket</defName>
+							<label>Cleansing Rocket</label>
+							<graphicData>
+								<texPath>Things/Projectile/Rocket/M72LAW</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<projectile Class="CombatExtended.ProjectilePropertiesCE">
+								<speed>42</speed>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>248</damageAmountBase>
+								<armorPenetrationSharp>300</armorPenetrationSharp>
+								<armorPenetrationBlunt>31.584</armorPenetrationBlunt>
+								<soundAmbient>RocketPropelledLoop_Small</soundAmbient>
+								<dropsCasings>true</dropsCasings>
+								<casingMoteDefname>Fleck_DisposableLauncherCasing</casingMoteDefname>
+								<casingFilthDefname>Filth_DisposableLauncherCasings</casingFilthDefname>
+							</projectile>
+							<comps>
+								<li Class="CombatExtended.CompProperties_ExplosiveCE">
+									<damageAmountBase>40</damageAmountBase>
+									<explosiveDamageType>CleansingBlast</explosiveDamageType>
+									<explosiveRadius>1</explosiveRadius>
+									<explosionSound>MortarBomb_Explode</explosionSound>
+									<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+								</li>
+								<li Class="CombatExtended.CompProperties_Fragments">
+									<fragments>
+										<Fragment_Large>3</Fragment_Large>
+										<Fragment_Small>7</Fragment_Small>
+									</fragments>
+								</li>
+								<li Class="CombatExtended.CompProperties_ProjectileFleck">
+									<FleckDatas>
+										<li>
+											<fleck>Fleck_CERocketFlame</fleck>
+											<emissionsPerTick>7</emissionsPerTick>
+											<flecksPerEmission>3</flecksPerEmission>
+											<scale>1</scale>
+											<cutoffTickRange>25~30</cutoffTickRange>
+										</li>
+										<li>
+											<fleck>Fleck_CERocketSmokeTrail</fleck>
+											<emissionsPerTick>2</emissionsPerTick>
+											<flecksPerEmission>1</flecksPerEmission>
+										</li>
+										<li>
+											<fleck>Fleck_CERocketSmoke</fleck>
+											<emissionsPerTick>2</emissionsPerTick>
+											<flecksPerEmission>2</flecksPerEmission>
+											<cutoffTickRange>25~60</cutoffTickRange>
+										</li>
+									</FleckDatas>
+								</li>
+							</comps>
+						</ThingDef>
+					</value>
 				</li>
 
 			</operations>

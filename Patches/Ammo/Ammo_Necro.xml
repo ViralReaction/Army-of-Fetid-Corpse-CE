@@ -70,6 +70,7 @@
 							<stackLimit>5000</stackLimit>
 							<tradeTags>
 								<li>CE_AutoEnableTrade</li>
+								<li>CE_AutoEnableCrafting</li>
 							</tradeTags>
 							<thingCategories>
 								<li>AmmoFetid</li>
@@ -95,6 +96,7 @@
 							<stackLimit>5000</stackLimit>
 							<tradeTags>
 								<li>CE_AutoEnableTrade</li>
+								<li>CE_AutoEnableCrafting</li>
 							</tradeTags>
 							<thingCategories>
 								<li>AmmoFetid</li>
@@ -120,6 +122,7 @@
 							<stackLimit>5000</stackLimit>
 							<tradeTags>
 								<li>CE_AutoEnableTrade</li>
+								<li>CE_AutoEnableCrafting</li>
 							</tradeTags>
 							<thingCategories>
 								<li>AmmoFetid</li>
@@ -145,6 +148,7 @@
 							<stackLimit>5000</stackLimit>
 							<tradeTags>
 								<li>CE_AutoEnableTrade</li>
+								<li>CE_AutoEnableCrafting</li>
 							</tradeTags>
 							<thingCategories>
 								<li>AmmoFetid</li>

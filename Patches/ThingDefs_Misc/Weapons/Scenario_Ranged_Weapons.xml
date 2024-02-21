@@ -60,6 +60,11 @@
 						<SwayFactor>1.21</SwayFactor>
 						<Bulk>9.43</Bulk>
 					</statBases>
+					<costList>
+						<WoodLog>10</WoodLog>
+						<Steel>50</Steel>
+						<ComponentIndustrial>5</ComponentIndustrial>
+					</costList>
 					<Properties>
 						<recoilAmount>1.46</recoilAmount>
 						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -86,6 +91,7 @@
 					<weaponTags>
 						<li>CE_AI_AssaultWeapon</li>
 					</weaponTags>
+					<researchPrerequisite>BlowbackOperation</researchPrerequisite>
 				</li>
 				
 				<!-- Remington 870 -->
@@ -99,6 +105,11 @@
 						<SwayFactor>1.32</SwayFactor>
 						<Bulk>9.78</Bulk>
 					</statBases>
+					<costList>
+						<Steel>45</Steel>
+						<WoodLog>10</WoodLog>
+						<ComponentIndustrial>1</ComponentIndustrial>
+					</costList>
 					<Properties>
 						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 						<hasStandardCommand>true</hasStandardCommand>
@@ -122,6 +133,7 @@
 					<weaponTags>
 						<li>CE_AI_AssaultWeapon</li>
 					</weaponTags>
+					<researchPrerequisite>Gunsmithing</researchPrerequisite>
 				</li>
 				
 				<!-- Survivalist Rifle -->
@@ -135,6 +147,11 @@
 						<SwayFactor>1.68</SwayFactor>
 						<Bulk>12.60</Bulk>
 					</statBases>
+					<costList>
+						<Steel>55</Steel>
+						<WoodLog>15</WoodLog>
+						<ComponentIndustrial>1</ComponentIndustrial>
+					</costList>
 					<Properties>
 					  <recoilAmount>2.04</recoilAmount>
 					  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -158,6 +175,7 @@
 					<weaponTags>
 						<li>CE_AI_SR</li>
 					</weaponTags>
+					<researchPrerequisite>Gunsmithing</researchPrerequisite>
 				</li>
 
 			</operations>

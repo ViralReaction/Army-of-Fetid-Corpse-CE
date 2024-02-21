@@ -37,7 +37,22 @@
 						<MeleeDamageFactor>1.40</MeleeDamageFactor>
 					</value>
 				</li>
+
+				<!-- Flame Proof Changes -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/HediffDef[defName="FlameProof"]/stages/li/statOffsets/ArmorRating_Heat</xpath>
+					<value>
+						<ArmorRating_Heat>0.50</ArmorRating_Heat>
+					</value>
+				</li>
 				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/HediffDef[defName="FlameProof"]/stages/li/statOffsets</xpath>
+					<value>
+						<Flammability>-2</Flammability>
+					</value>
+				</li>
+
 				<!-- Hediff Giver Set -->
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/HediffGiverSetDef[defName="Mutations"]/hediffGivers/li[contains(hediff, "Painless")]/ageFractionChanceCurve/points</xpath>

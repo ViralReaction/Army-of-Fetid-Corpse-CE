@@ -8,6 +8,10 @@
 		<match Class="PatchOperationSequence">
 			<operations>
 
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[@Name="NecroWeaponsBase"]/recipeMaker/researchPrerequisite</xpath>
+				</li>
+
 				<!-- Tools -->
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[@Name="NecroWeaponsBase"]/tools
@@ -90,6 +94,18 @@
 					</weaponTags>
 				</li>
 
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Gun_Craftable_BoneshardRifle"]</xpath>
+					<value>
+						<recipeMaker>
+							<researchPrerequisites>
+								<li>GasOperation</li>
+								<li>NecroWeapons</li>
+							</researchPrerequisites>
+						</recipeMaker>
+					</value>
+				</li>
+
 				<!-- Boneshard Shotgun -->
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 					<defName>Gun_Craftable_BoneshardShotgun</defName>
@@ -125,6 +141,18 @@
 						<li>CE_AI_BROOM</li>
 						<li>NoSwitch</li>
 					</weaponTags>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Gun_Craftable_BoneshardShotgun"]</xpath>
+					<value>
+						<recipeMaker>
+							<researchPrerequisites>
+								<li>Gunsmithing</li>
+								<li>NecroWeapons</li>
+							</researchPrerequisites>
+						</recipeMaker>
+					</value>
 				</li>
 
 				<!-- Boneshard Advanced -->
@@ -169,6 +197,18 @@
 					<AllowWithRunAndGun>false</AllowWithRunAndGun>
 				</li>
 
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Gun_Craftable_AdvancedBoneshardRifle"]</xpath>
+					<value>
+						<recipeMaker>
+							<researchPrerequisites>
+								<li>ChargedShot</li>
+								<li>NecroWeapons</li>
+							</researchPrerequisites>
+						</recipeMaker>
+					</value>
+				</li>
+
 				<!-- Boneshard Avenger -->
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 					<defName>Gun_Craftable_BoneshardRapidBlaster</defName>
@@ -208,6 +248,18 @@
 					</weaponTags>
 					<AllowWithRunAndGun>false</AllowWithRunAndGun>
 				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Gun_Craftable_BoneshardRapidBlaster"]</xpath>
+					<value>
+						<recipeMaker>
+							<researchPrerequisites>
+								<li>MultibarrelWeapons</li>
+								<li>NecroWeapons</li>
+							</researchPrerequisites>
+						</recipeMaker>
+					</value>
+				</li>
 
 				<!-- Boneshard Sniper Rifle -->
 				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
@@ -244,6 +296,18 @@
 						<li>NoSwitch</li>
 					</weaponTags>
 					<AllowWithRunAndGun>false</AllowWithRunAndGun>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Gun_Craftable_BoneshardSniperRifle"]</xpath>
+					<value>
+						<recipeMaker>
+							<researchPrerequisites>
+								<li>GasOperation</li>
+								<li>NecroWeapons</li>
+							</researchPrerequisites>
+						</recipeMaker>
+					</value>
 				</li>
 
 			</operations>
