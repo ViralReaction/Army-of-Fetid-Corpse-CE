@@ -22,6 +22,13 @@
 						<combatPower>100001</combatPower>
 					</value>
 				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/FactionDef[defName="Necronoid"]/canSiege</xpath>
+					<value>
+						<canSiege>false</canSiege>
+					</value>
+				</li>
 
 			</operations>
 		</match>

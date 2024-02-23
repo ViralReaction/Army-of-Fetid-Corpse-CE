@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Army Of Fetid Corpses</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="MobileGasCooker"]/statBases/Mass</xpath>
+					<value>
+						<Mass>3</Mass>
+						<Bulk>2</Bulk>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Turret_NecroTurret"]/thingClass</xpath>
+					<value>
+						<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Turret_NecroTurret"]/statBases</xpath>
+					<value>
+						<AimingAccuracy>0.25</AimingAccuracy>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Turret_NecroTurret"]/statBases/ShootingAccuracyTurret</xpath>
+					<value>
+						<ShootingAccuracyTurret>0.5</ShootingAccuracyTurret>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Turret_NecroTurret"]/statBases/Mass</xpath>
+					<value>
+						<Mass>25</Mass>
+						<Bulk>15</Bulk>
+					</value>
+				</li>
+
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="Turret_NecroTurret"]/comps/li[@Class="CompProperties_Explosive"]</xpath>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Turret_NecroTurret"]/fillPercent</xpath>
+					<value>
+						<fillPercent>0.85</fillPercent>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Turret_NecroTurret"]/building/turretBurstCooldownTime</xpath>
+					<value>
+						<turretBurstCooldownTime>1.0</turretBurstCooldownTime>
+					</value>
+				</li>
+
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>Gun_NecroTurret</defName>
+					<statBases>
+						<RangedWeapon_Cooldown>0.36</RangedWeapon_Cooldown>
+						<SightsEfficiency>1</SightsEfficiency>
+						<ShotSpread>0.07</ShotSpread>
+						<SwayFactor>0.69</SwayFactor>
+					</statBases>
+					<Properties>
+						<recoilAmount>0.91</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_Fetid_Boneshard</defaultProjectile>
+						<warmupTime>1.3</warmupTime>
+						<range>48</range>
+						<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+						<burstShotCount>10</burstShotCount>
+						<soundCast>GunShotA</soundCast>
+						<soundCastTail>GunTail_Light</soundCastTail>
+						<muzzleFlashScale>9</muzzleFlashScale>
+						<recoilPattern>Mounted</recoilPattern>
+					</Properties>
+					<FireModes>
+						<aiAimMode>AimedShot</aiAimMode>
+						<noSnapshot>true</noSnapshot>
+						<noSingleShot>true</noSingleShot>
+					</FireModes>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
